@@ -1,0 +1,243 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (malloc) failed to allocate 152 bytes for CHeapObj-new
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   In 32 bit mode, the process size limit was hit
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Use 64 bit Java on a 64 bit OS
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (memory/allocation.inline.hpp:58), pid=2700, tid=2868
+#
+# JRE version: 7.0_21-b11
+# Java VM: Java HotSpot(TM) Client VM (23.21-b01 mixed mode, sharing windows-x86 )
+# Failed to write core dump. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x03d60000):  JavaThread "AWT-EventQueue-0" [_thread_in_vm, id=2868, stack(0x04230000,0x04280000)]
+
+Stack: [0x04230000,0x04280000],  sp=0x0427e0bc,  free space=312k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x170511]
+V  [jvm.dll+0x16a815]
+V  [jvm.dll+0x5e6f9]
+V  [jvm.dll+0x12beb3]
+V  [jvm.dll+0x12acd5]
+V  [jvm.dll+0x12b3e2]
+V  [jvm.dll+0x1daa0e]
+V  [jvm.dll+0x12b49d]
+V  [jvm.dll+0xaf68a]
+V  [jvm.dll+0xb12af]
+C  [fontmanager.dll+0x2de1]
+C  [fontmanager.dll+0x3191]
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  sun.awt.Win32FontManager.populateFontFileNameMap0(Ljava/util/HashMap;Ljava/util/HashMap;Ljava/util/HashMap;Ljava/util/Locale;)V+0
+j  sun.awt.Win32FontManager.populateFontFileNameMap(Ljava/util/HashMap;Ljava/util/HashMap;Ljava/util/HashMap;Ljava/util/Locale;)V+5
+j  sun.font.SunFontManager.getFullNameToFileMap()Ljava/util/HashMap;+73
+j  sun.font.SunFontManager.findFontFromPlatform(Ljava/lang/String;I)Lsun/font/Font2D;+1
+j  sun.font.SunFontManager.findFont2D(Ljava/lang/String;II)Lsun/font/Font2D;+522
+j  sun.font.SunFontManager.getDefaultPhysicalFont()Lsun/font/PhysicalFont;+13
+j  sun.font.SunFontManager.initialiseDeferredFont(Ljava/lang/String;)Lsun/font/PhysicalFont;+113
+j  sun.font.SunFontManager.findJREDeferredFont(Ljava/lang/String;I)Lsun/font/PhysicalFont;+89
+j  sun.font.SunFontManager.findFont2D(Ljava/lang/String;II)Lsun/font/Font2D;+493
+j  sun.font.SunFontManager.getDefaultPhysicalFont()Lsun/font/PhysicalFont;+13
+j  sun.font.SunFontManager.initialiseDeferredFont(Ljava/lang/String;)Lsun/font/PhysicalFont;+113
+j  sun.font.CompositeFont.doDeferredInitialisation(I)V+73
+j  sun.font.CompositeFont.getSlotFont(I)Lsun/font/PhysicalFont;+11
+j  sun.font.CompositeStrike.getStrikeForSlot(I)Lsun/font/PhysicalStrike;+16
+j  sun.font.CompositeStrike.getFontMetrics()Lsun/font/StrikeMetrics;+31
+j  sun.font.FontDesignMetrics.initMatrixAndMetrics()V+28
+j  sun.font.FontDesignMetrics.<init>(Ljava/awt/Font;Ljava/awt/font/FontRenderContext;)V+62
+j  sun.font.FontDesignMetrics.getMetrics(Ljava/awt/Font;Ljava/awt/font/FontRenderContext;)Lsun/font/FontDesignMetrics;+129
+j  sun.swing.SwingUtilities2.getFontMetrics(Ljavax/swing/JComponent;Ljava/awt/Font;)Ljava/awt/FontMetrics;+15
+j  javax.swing.JComponent.getFontMetrics(Ljava/awt/Font;)Ljava/awt/FontMetrics;+2
+j  javax.swing.text.PlainView.calculateLongestLine()V+19
+j  javax.swing.text.PlainView.updateMetrics()V+19
+j  javax.swing.text.PlainView.updateDamage(Ljavax/swing/event/DocumentEvent;Ljava/awt/Shape;Ljavax/swing/text/ViewFactory;)V+7
+j  javax.swing.text.PlainView.insertUpdate(Ljavax/swing/event/DocumentEvent;Ljava/awt/Shape;Ljavax/swing/text/ViewFactory;)V+4
+j  javax.swing.plaf.basic.BasicTextUI$RootView.insertUpdate(Ljavax/swing/event/DocumentEvent;Ljava/awt/Shape;Ljavax/swing/text/ViewFactory;)V+14
+j  javax.swing.plaf.basic.BasicTextUI$UpdateHandler.insertUpdate(Ljavax/swing/event/DocumentEvent;)V+101
+j  javax.swing.text.AbstractDocument.fireInsertUpdate(Ljavax/swing/event/DocumentEvent;)V+40
+j  javax.swing.text.AbstractDocument.handleInsertString(ILjava/lang/String;Ljavax/swing/text/AttributeSet;)V+150
+j  javax.swing.text.AbstractDocument.insertString(ILjava/lang/String;Ljavax/swing/text/AttributeSet;)V+46
+j  javax.swing.text.PlainDocument.insertString(ILjava/lang/String;Ljavax/swing/text/AttributeSet;)V+104
+j  javax.swing.text.AbstractDocument.replace(IILjava/lang/String;Ljavax/swing/text/AttributeSet;)V+74
+j  javax.swing.text.JTextComponent.setText(Ljava/lang/String;)V+25
+j  MainPage.initComponents()V+4778
+j  MainPage.<init>()V+5
+j  MainPage$34.run()V+4
+j  java.awt.event.InvocationEvent.dispatch()V+47
+j  java.awt.EventQueue.dispatchEventImpl(Ljava/awt/AWTEvent;Ljava/lang/Object;)V+21
+j  java.awt.EventQueue.access$200(Ljava/awt/EventQueue;Ljava/awt/AWTEvent;Ljava/lang/Object;)V+3
+j  java.awt.EventQueue$3.run()Ljava/lang/Void;+12
+j  java.awt.EventQueue$3.run()Ljava/lang/Object;+1
+v  ~StubRoutines::call_stub
+j  java.security.AccessController.doPrivileged(Ljava/security/PrivilegedAction;Ljava/security/AccessControlContext;)Ljava/lang/Object;+0
+j  java.security.ProtectionDomain$1.doIntersectionPrivilege(Ljava/security/PrivilegedAction;Ljava/security/AccessControlContext;Ljava/security/AccessControlContext;)Ljava/lang/Object;+28
+j  java.awt.EventQueue.dispatchEvent(Ljava/awt/AWTEvent;)V+46
+j  java.awt.EventDispatchThread.pumpOneEventForFilters(I)V+245
+j  java.awt.EventDispatchThread.pumpEventsForFilter(ILjava/awt/Conditional;Ljava/awt/EventFilter;)V+35
+j  java.awt.EventDispatchThread.pumpEventsForHierarchy(ILjava/awt/Conditional;Ljava/awt/Component;)V+11
+j  java.awt.EventDispatchThread.pumpEvents(ILjava/awt/Conditional;)V+4
+j  java.awt.EventDispatchThread.pumpEvents(Ljava/awt/Conditional;)V+3
+j  java.awt.EventDispatchThread.run()V+9
+v  ~StubRoutines::call_stub
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x006ca800 JavaThread "DestroyJavaVM" [_thread_blocked, id=3308, stack(0x00ab0000,0x00b00000)]
+=>0x03d60000 JavaThread "AWT-EventQueue-0" [_thread_in_vm, id=2868, stack(0x04230000,0x04280000)]
+  0x03d15c00 JavaThread "AWT-Windows" daemon [_thread_in_native, id=2524, stack(0x040a0000,0x040f0000)]
+  0x03d15400 JavaThread "AWT-Shutdown" [_thread_blocked, id=3016, stack(0x04160000,0x041b0000)]
+  0x03d11c00 JavaThread "Java2D Disposer" daemon [_thread_blocked, id=2304, stack(0x04100000,0x04150000)]
+  0x00bdf800 JavaThread "Service Thread" daemon [_thread_blocked, id=1292, stack(0x00ef0000,0x00f40000)]
+  0x00bc5400 JavaThread "C1 CompilerThread0" daemon [_thread_blocked, id=1976, stack(0x00e70000,0x00ec0000)]
+  0x00bbf800 JavaThread "Attach Listener" daemon [_thread_blocked, id=572, stack(0x01010000,0x01060000)]
+  0x00bbc400 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=3072, stack(0x00cf0000,0x00d40000)]
+  0x00ba9c00 JavaThread "Finalizer" daemon [_thread_blocked, id=2176, stack(0x00c60000,0x00cb0000)]
+  0x00ba4800 JavaThread "Reference Handler" daemon [_thread_blocked, id=3104, stack(0x00df0000,0x00e40000)]
+
+Other Threads:
+  0x00ba3000 VMThread [stack: 0x00d50000,0x00da0000] [id=2352]
+  0x00bf9400 WatcherThread [stack: 0x00fb0000,0x01000000] [id=1516]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x006c8508] JNIHandleBlockFreeList_lock - owner thread: 0x03d60000
+
+Heap
+ def new generation   total 4928K, used 3070K [0x238f0000, 0x23e40000, 0x28e40000)
+  eden space 4416K,  69% used [0x238f0000, 0x23befb40, 0x23d40000)
+  from space 512K,   0% used [0x23d40000, 0x23d40000, 0x23dc0000)
+  to   space 512K,   0% used [0x23dc0000, 0x23dc0000, 0x23e40000)
+ tenured generation   total 10944K, used 0K [0x28e40000, 0x298f0000, 0x338f0000)
+   the space 10944K,   0% used [0x28e40000, 0x28e40000, 0x28e40200, 0x298f0000)
+ compacting perm gen  total 12288K, used 1408K [0x338f0000, 0x344f0000, 0x378f0000)
+   the space 12288K,  11% used [0x338f0000, 0x33a50098, 0x33a50200, 0x344f0000)
+    ro space 10240K,  45% used [0x378f0000, 0x37d77988, 0x37d77a00, 0x382f0000)
+    rw space 12288K,  54% used [0x382f0000, 0x3897b5d8, 0x3897b600, 0x38ef0000)
+
+Card table byte_map: [0x006d0000,0x00780000] byte_map_base: 0x005b3880
+
+Polling page: 0x00140000
+
+Code Cache  [0x01ce0000, 0x01da8000, 0x03ce0000)
+ total_blobs=313 nmethods=117 adapters=131 free_code_cache=31990Kb largest_free_block=32757888
+
+Compilation events (10 events):
+Event: 0.389 Thread 0x00bc5400  113             java.lang.StringBuilder::<init> (7 bytes)
+Event: 0.389 Thread 0x00bc5400 nmethod 113 0x01da0b08 code [0x01da0c00, 0x01da0d10]
+Event: 0.400 Thread 0x00bc5400  114             java.awt.Component::getTreeLock (4 bytes)
+Event: 0.400 Thread 0x00bc5400 nmethod 114 0x01da0d88 code [0x01da0e80, 0x01da0f00]
+Event: 0.400 Thread 0x00bc5400  115   !         java.awt.Component::firePropertyChange (59 bytes)
+Event: 0.401 Thread 0x00bc5400 nmethod 115 0x01da0f48 code [0x01da1090, 0x01da1460]
+Event: 0.403 Thread 0x00bc5400  116             sun.net.www.ParseUtil::encodePath (336 bytes)
+Event: 0.404 Thread 0x00bc5400 nmethod 116 0x01da1708 code [0x01da18b0, 0x01da1f58]
+Event: 0.404 Thread 0x00bc5400  117             java.util.ArrayList::access$100 (5 bytes)
+Event: 0.404 Thread 0x00bc5400 nmethod 117 0x01da25c8 code [0x01da26c0, 0x01da2730]
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Internal exceptions (10 events):
+Event: 0.410 Thread 0x03d60000 Threw 0x23bcf378 at C:\jdk7u2_32P\jdk7u21\hotspot\src\share\vm\prims\jvm.cpp:1166
+Event: 0.411 Thread 0x03d60000 Threw 0x23bd1e70 at C:\jdk7u2_32P\jdk7u21\hotspot\src\share\vm\prims\jvm.cpp:1166
+Event: 0.412 Thread 0x03d60000 Threw 0x23bd3118 at C:\jdk7u2_32P\jdk7u21\hotspot\src\share\vm\prims\jvm.cpp:1166
+Event: 0.433 Thread 0x03d60000 Threw 0x23bd57a0 at C:\jdk7u2_32P\jdk7u21\hotspot\src\share\vm\prims\jvm.cpp:3649
+Event: 0.433 Thread 0x03d60000 Threw 0x23bd57a0 at C:\jdk7u2_32P\jdk7u21\hotspot\src\share\vm\prims\jni.cpp:716
+Event: 0.433 Thread 0x03d60000 Threw 0x23bd57a0 at C:\jdk7u2_32P\jdk7u21\hotspot\src\share\vm\prims\jvm.cpp:1170
+Event: 0.433 Thread 0x03d60000 Threw 0x23bd57a0 at C:\jdk7u2_32P\jdk7u21\hotspot\src\share\vm\oops\instanceKlass.cpp:546
+Event: 0.433 Thread 0x03d60000 Threw 0x23bd57a0 at C:\jdk7u2_32P\jdk7u21\hotspot\src\share\vm\oops\instanceKlass.cpp:546
+Event: 0.433 Thread 0x03d60000 Threw 0x23bd57a0 at C:\jdk7u2_32P\jdk7u21\hotspot\src\share\vm\oops\instanceKlass.cpp:546
+Event: 0.434 Thread 0x03d60000 Threw 0x23bd6f48 at C:\jdk7u2_32P\jdk7u21\hotspot\src\share\vm\oops\instanceKlass.cpp:485
+
+Events (10 events):
+Event: 0.433 loading class 0x38f5e9c0
+Event: 0.433 loading class 0x38f5e9c0 done
+Event: 0.433 loading class 0x03d40c60
+Event: 0.433 loading class 0x03d40c60 done
+Event: 0.434 loading class 0x38f31608
+Event: 0.434 loading class 0x38f31608 done
+Event: 0.434 loading class 0x38f315c8
+Event: 0.434 loading class 0x38f31548
+Event: 0.434 loading class 0x38f31548 done
+Event: 0.434 loading class 0x38f315c8 done
+
+
+Dynamic libraries:
+0x010b0000 - 0x010df000 	C:\Program Files\Java\jdk1.7.0_21\bin\java.exe
+0x77d40000 - 0x77e7c000 	C:\Windows\SYSTEM32\ntdll.dll
+0x76d00000 - 0x76dd4000 	C:\Windows\system32\kernel32.dll
+0x76160000 - 0x761ab000 	C:\Windows\system32\KERNELBASE.dll
+0x76b70000 - 0x76c10000 	C:\Windows\system32\ADVAPI32.dll
+0x76530000 - 0x765dc000 	C:\Windows\system32\msvcrt.dll
+0x766f0000 - 0x76709000 	C:\Windows\SYSTEM32\sechost.dll
+0x76430000 - 0x764d1000 	C:\Windows\system32\RPCRT4.dll
+0x76de0000 - 0x76ea9000 	C:\Windows\system32\USER32.dll
+0x764e0000 - 0x7652e000 	C:\Windows\system32\GDI32.dll
+0x77e80000 - 0x77e8a000 	C:\Windows\system32\LPK.dll
+0x76eb0000 - 0x76f4d000 	C:\Windows\system32\USP10.dll
+0x74c30000 - 0x74dce000 	C:\Windows\WinSxS\x86_microsoft.windows.common-controls_6595b64144ccf1df_6.0.7600.16661_none_420fe3fa2b8113bd\COMCTL32.dll
+0x77ea0000 - 0x77ef7000 	C:\Windows\system32\SHLWAPI.dll
+0x76ce0000 - 0x76cff000 	C:\Windows\system32\IMM32.DLL
+0x76c10000 - 0x76cdc000 	C:\Windows\system32\MSCTF.dll
+0x6d4a0000 - 0x6d55e000 	C:\Program Files\Java\jdk1.7.0_21\jre\bin\msvcr100.dll
+0x69c50000 - 0x69f9f000 	C:\Program Files\Java\jdk1.7.0_21\jre\bin\client\jvm.dll
+0x73870000 - 0x73877000 	C:\Windows\system32\WSOCK32.dll
+0x77f30000 - 0x77f65000 	C:\Windows\system32\WS2_32.dll
+0x77e90000 - 0x77e96000 	C:\Windows\system32\NSI.dll
+0x73bb0000 - 0x73be2000 	C:\Windows\system32\WINMM.dll
+0x76820000 - 0x76825000 	C:\Windows\system32\PSAPI.DLL
+0x73860000 - 0x7386c000 	C:\Program Files\Java\jdk1.7.0_21\jre\bin\verify.dll
+0x736b0000 - 0x736d0000 	C:\Program Files\Java\jdk1.7.0_21\jre\bin\java.dll
+0x73510000 - 0x73523000 	C:\Program Files\Java\jdk1.7.0_21\jre\bin\zip.dll
+0x69b00000 - 0x69c42000 	C:\Program Files\Java\jdk1.7.0_21\jre\bin\awt.dll
+0x76790000 - 0x7681f000 	C:\Windows\system32\OLEAUT32.dll
+0x762d0000 - 0x7642c000 	C:\Windows\system32\ole32.dll
+0x73ec0000 - 0x73f00000 	C:\Windows\system32\uxtheme.dll
+0x73b50000 - 0x73b63000 	C:\Windows\system32\dwmapi.dll
+0x75e60000 - 0x75e6c000 	C:\Windows\system32\CRYPTBASE.dll
+0x770f0000 - 0x77d39000 	C:\Windows\system32\SHELL32.dll
+0x6d240000 - 0x6d271000 	C:\Program Files\Java\jdk1.7.0_21\jre\bin\fontmanager.dll
+
+VM Arguments:
+jvm_args: -Dfile.encoding=UTF-8 
+java_command: MainPage
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+PATH=C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\nodejs\;C:\Users\BJOSHI\AppData\Roaming\npm
+USERNAME=BJOSHI
+OS=Windows_NT
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 7 Build 7600 
+
+CPU:total 2 (2 cores per cpu, 1 threads per core) family 6 model 23 stepping 10, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, tsc
+
+Memory: 4k page, physical 1833388k(366884k free), swap 2009036k(5120k free)
+
+vm_info: Java HotSpot(TM) Client VM (23.21-b01) for windows-x86 JRE (1.7.0_21-b11), built on Apr  4 2013 04:43:10 by "java_re" with unknown MS VC++:1600
+
+time: Wed Mar 12 01:37:48 2014
+elapsed time: 0 seconds
+
